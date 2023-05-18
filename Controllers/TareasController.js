@@ -1,9 +1,11 @@
-const arrayPrueba = [1, 2, 3, 4, 5, 6, 7];
+const Tareas = require("../Models/Tareas");
 
-const readTareas = (req, res) => {
+const readTareas = async (req, res) => {
+  const tareas = await Tareas.find();
+  console.log(tareas);
   res.json({
     mensaje: "Lista de tareas",
-    data: arrayPrueba,
+    data: tareas,
   });
 };
 
