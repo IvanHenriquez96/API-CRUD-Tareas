@@ -1,10 +1,8 @@
 const router = require("express").Router();
 const TareasController = require("../Controllers/TareasController");
 
-router.get("/", TareasController.readTareas);
+router.get("/", TareasController.inicio);
 
-router.get("/another-route", (req, res) => {
-  // router code here
-});
+router.get("/api/", TareasController.readTareas);
 
 module.exports = router;
