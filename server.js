@@ -6,6 +6,9 @@ const conectarDB = require("./config/database");
 //Conectar a la DB
 conectarDB();
 
+//Middleware para analizar el cuerpo de las solicitudes en fotmato JSON
+app.use(express.json());
+
 const router = require("./routes/router"); //importar router
 app.use("/", router); //usar el router
 
