@@ -1,7 +1,12 @@
 require("dotenv").config();
 const express = require("express");
-const app = express();
+const cors = require("cors");
 const conectarDB = require("./config/database");
+
+const app = express();
+
+// Aplica el middleware 'cors' a todas las rutas
+app.use(cors());
 
 //Conectar a la DB
 conectarDB();
